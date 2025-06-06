@@ -188,7 +188,7 @@ function SingleMotor:__tostring()
 	return "Motor(Single)"
 end
 -----------------------------GroupMotor-----------------------------
-ocal GroupMotor = setmetatable({}, BaseMotor)
+local GroupMotor = setmetatable({}, BaseMotor)
 GroupMotor.__index = GroupMotor
 
 local function toMotor(value)
