@@ -2610,7 +2610,7 @@ local Roact = strict({
 	forwardRef = forwardRef,
 	createBinding = Binding.create,
 	joinBindings = Binding.join,
-	createContext = createContext(),
+	createContext = createContext,
 
 	Change = Change,
 	Children = Children,
