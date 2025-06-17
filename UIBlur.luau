@@ -2,19 +2,21 @@
   UI Blur [AUTOMATIC]
   Devforum link + Credits: https://devforum.roblox.com/t/ui-blur-automatic/2402850
 ]]
+
+local cloneref = cloneref or clonereference or function(o) return o end
 return function(frameToModify)
-  local http = game:GetService("HttpService")
+  local http = cloneref(game:GetService("HttpService"))
   local guid = function()
     return http:GenerateGUID(false)
   end
-  local RunService = game:GetService('RunService')
-  local camera = workspace.CurrentCamera
+  local RunService = cloneref(game:GetService('RunService'))
+  local camera = cloneref(workspace.CurrentCamera)
   local MTREL = "Glass"
   local binds = {}
   local root = Instance.new('Folder', camera)
   root.Name = guid()
   
-  local DepthOfField = Instance.new('DepthOfFieldEffect', game:GetService('Lighting'))
+  local DepthOfField = Instance.new('DepthOfFieldEffect', cloneref(game:GetService('Lighting')))
   DepthOfField.FarIntensity = 0
   DepthOfField.FocusDistance = 51.6
   DepthOfField.InFocusRadius = 50
